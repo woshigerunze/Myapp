@@ -11,13 +11,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Androidproject">
-        <activity android:name=".collectlistview.ListViewItemActivity"></activity>
+        <activity android:name=".collectlistview.ListViewItemActivity"/>
         <activity android:name=".collectlistview.CollectActivity" />
         <activity android:name=".AppNameActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

@@ -6,24 +6,20 @@ import android.app.usage.UsageStats;
 import android.app.usage.UsageStatsManager;
 import android.content.Context;
 import android.content.Intent;
-import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.provider.Settings;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import com.example.androidproject.MainActivity;
 import com.example.androidproject.R;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 
@@ -31,6 +27,7 @@ public class CollectActivity extends AppCompatActivity {
     public ListView listView;
     public List<CollectStatics> list_item=new ArrayList<>();
     public HashMap<String, Drawable> iconMap=new HashMap<>();
+    public HashMap<String, String> packageInfoHashMap=new HashMap<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,6 +39,7 @@ public class CollectActivity extends AppCompatActivity {
         if(packageInfos!=null){
             for(int i=0;i<packageInfos.size();i++){
                 iconMap.put(packageInfos.get(i).packageName,packageInfos.get(i).applicationInfo.loadIcon(getPackageManager()));
+                packageInfoHashMap.put(packageInfos.get(i).packageName,packageInfos.get(i).applicationInfo.loadLabel(getPackageManager()).toString());
             }
         }
         UsageStatsManager usageStatsManager=(UsageStatsManager)getSystemService(USAGE_STATS_SERVICE);
@@ -49,9 +47,9 @@ public class CollectActivity extends AppCompatActivity {
         List<UsageStats> list=usageStatsManager.queryUsageStats(UsageStatsManager.INTERVAL_BEST, time, System.currentTimeMillis());
         List<String> appName=new ArrayList<>();
         for(int i=0;i<list.size();i++) {
-            list_item.add(new CollectStatics(list.get(i),iconMap.get(list.get(i).getPackageName())));
+            list_item.add(new CollectStatics(list.get(i),iconMap.get(list.get(i).getPackageName()),packageInfoHashMap.get(list.get(i).getPackageName())));
         }
-
+        Collections.sort(list_item,(CollectStatics o1,CollectStatics o2)->o2.getTimeStamp().compareTo(o1.getTimeStamp()));
         CollectListViewAdapater myAdapter = new CollectListViewAdapater(this,R.layout.collect_listview,list_item);
         listView = (ListView)this.findViewById(R.id.listView);
         listView.setAdapter(myAdapter);
@@ -59,6 +57,7 @@ public class CollectActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Bundle bundle=new Bundle();
+                bundle.putString("appname",list_item.get(position).getAppname());
                 bundle.putString("packagename",list_item.get(position).getPackageName());
                 bundle.putString("time",list_item.get(position).getTime());
                 Intent intent=new Intent(getApplicationContext(),ListViewItemActivity.class);

@@ -18,7 +18,6 @@ import java.util.HashMap;
 import java.util.List;
 import android.database.*;
 public class AppNameActivity extends AppCompatActivity {
-    public String TABLE_NAME=new String("app");
     public SQLiteHelper database                =new SQLiteHelper(AppNameActivity.this);
     SQLiteDatabase      db                      ;
     HashMap<String, Integer> packageName_Map    =new HashMap<String, Integer>();
@@ -59,18 +58,18 @@ public class AppNameActivity extends AppCompatActivity {
                 appNames.add(appName);
             }
         }
-//        db=database.getWritableDatabase();
-//        for(int i=0;i<packageNames.size();i++)
-//        {
-//            if(packageName_Map.get(packageNames.get(i))==null) {
-//                ContentValues values = new ContentValues();
-//                values.put("appname", appNames.get(i));
-//                values.put("packagename", packageNames.get(i));
-//                db.insert("app", null, values);
-//                values.clear();
-//            }
-//        }
-//        db.close();
+        db=database.getWritableDatabase();
+        for(int i=0;i<packageNames.size();i++)
+        {
+            if(!packageName_Map.containsKey(packageNames.get(i))) {
+                ContentValues values = new ContentValues();
+                values.put("appname", appNames.get(i));
+                values.put("packagename", packageNames.get(i));
+                db.insert("app", null, values);
+                values.clear();
+            }
+        }
+        db.close();
         ListView listView = (ListView) findViewById(R.id.listView);//得到ListView对象的引用
         listView.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, appName_Database));
 
