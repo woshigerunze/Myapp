@@ -3,7 +3,11 @@ package com.example.androidproject.collectlistview;
 import android.app.Service;
 import android.app.usage.UsageStats;
 import android.app.usage.UsageStatsManager;
+import android.content.ContentValues;
 import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.BatteryManager;
 import android.os.IBinder;
@@ -12,6 +16,8 @@ import android.util.Log;
 import androidx.annotation.Nullable;
 
 import com.example.androidproject.SQLiteHelper;
+
+import java.util.HashMap;
 import java.util.List;
 
 public class CollectService extends Service {
@@ -30,11 +36,23 @@ public class CollectService extends Service {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        Log.d(TAG, "onStartCommand");
+        PackageManager packageManager = getApplicationContext().getPackageManager();//获取所有已安装程序的包信息
+        List<PackageInfo> packageInfos = packageManager.getInstalledPackages(0);
         db=db_helper.getWritableDatabase();
-        for(UsageStats cursor : list){
-
-        }
+        Log.d("wocaonima","111");
+            for (int i = 0; i < list.size(); i++) {
+                String packagename = list.get(i).getPackageName();
+                String timestamp = Long.toString(list.get(i).getLastTimeStamp());
+                Cursor cursor = db.rawQuery("select timestamp from appuse where packagename=? and timestamp=?", new String[]{packagename, timestamp});
+                if (cursor.getCount() <= 0) {
+                    ContentValues values = new ContentValues();
+                    values.put("id", (byte[]) null);
+                    values.put("timestamp", timestamp);
+                    values.put("packagename", packagename);
+                    db.insert("appuse", null, values);
+                }
+                cursor.close();
+            }
         return super.onStartCommand(intent, flags, startId);
     }
 

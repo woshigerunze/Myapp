@@ -2,6 +2,8 @@ package com.example.androidproject;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.usage.UsageEvents;
+import android.app.usage.UsageStatsManager;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.pm.PackageInfo;
@@ -72,6 +74,6 @@ public class AppNameActivity extends AppCompatActivity {
         db.close();
         ListView listView = (ListView) findViewById(R.id.listView);//得到ListView对象的引用
         listView.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, appName_Database));
-
     }
+
 }

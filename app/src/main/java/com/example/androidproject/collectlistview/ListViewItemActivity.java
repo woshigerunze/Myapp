@@ -27,5 +27,6 @@ public class ListViewItemActivity extends AppCompatActivity {
         String packageName      =bundle.getString("packagename");
         appname.setText(appName);
         packagename.setText(packageName);
+
     }
 }

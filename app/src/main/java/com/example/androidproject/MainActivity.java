@@ -1,6 +1,10 @@
 package com.example.androidproject;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.app.usage.UsageEvents;
+import android.app.usage.UsageStatsManager;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -10,6 +14,10 @@ import android.widget.LinearLayout;
 
 import com.example.androidproject.collectlistview.CollectActivity;
 import com.example.androidproject.collectlistview.CollectService;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     public Intent intent ;

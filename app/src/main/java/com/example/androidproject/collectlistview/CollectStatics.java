@@ -24,8 +24,8 @@ public class CollectStatics {
     }
 
     public String getTime(){
-        Date date = new Date(this.usageStats.getLastTimeUsed());
-        SimpleDateFormat sd = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        Date date = new Date(this.usageStats.getTotalTimeInForeground());
+        SimpleDateFormat sd = new SimpleDateFormat("mm:ss");
         String res=sd.format(date);
         if(res.equals("00:00"))return "还未使用过此APP";
         return "总使用时间："+res;
