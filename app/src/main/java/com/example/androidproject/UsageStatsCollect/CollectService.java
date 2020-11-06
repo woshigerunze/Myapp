@@ -1,4 +1,4 @@
-package com.example.androidproject.collectlistview;
+package com.example.androidproject.UsageStatsCollect;
 
 import android.app.Service;
 import android.app.usage.UsageStats;
@@ -9,15 +9,11 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.os.BatteryManager;
 import android.os.IBinder;
 import android.util.Log;
 
-import androidx.annotation.Nullable;
-
 import com.example.androidproject.SQLiteHelper;
 
-import java.util.HashMap;
 import java.util.List;
 
 public class CollectService extends Service {

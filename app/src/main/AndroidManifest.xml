@@ -11,9 +11,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Androidproject">
-        <activity android:name=".UseTImeDetailActivity"></activity>
-        <activity android:name=".collectlistview.ListViewItemActivity" />
-        <activity android:name=".collectlistview.CollectActivity" />
+        <activity android:name=".BatteryCollect.BatteryMainActivity"></activity>
+        <activity android:name=".UseTImeDetailActivity" />
+        <activity android:name=".UsageStatsCollect.ListViewItemActivity" />
+        <activity android:name=".UsageStatsCollect.CollectActivity" />
         <activity android:name=".AppNameActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
@@ -24,7 +25,7 @@
         </activity>
 
         <service
-            android:name=".collectlistview.CollectService"
+            android:name=".UsageStatsCollect.CollectService"
             android:enabled="true"
             android:process=":service" />
     </application>

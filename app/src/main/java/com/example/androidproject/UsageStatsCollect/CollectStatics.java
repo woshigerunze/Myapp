@@ -1,14 +1,7 @@
-package com.example.androidproject.collectlistview;
+package com.example.androidproject.UsageStatsCollect;
 
 import android.app.usage.UsageStats;
-import android.content.Context;
-import android.content.pm.ApplicationInfo;
-import android.content.pm.PackageInfo;
-import android.content.pm.PackageManager;
 import android.graphics.drawable.Drawable;
-
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 public class CollectStatics {
     private UsageStats      usageStats;
@@ -24,9 +17,15 @@ public class CollectStatics {
     }
 
     public String getTime(){
-        Date date = new Date(this.usageStats.getTotalTimeInForeground());
-        SimpleDateFormat sd = new SimpleDateFormat("mm:ss");
-        String res=sd.format(date);
+//        Date date = new Date(this.usageStats.getTotalTimeInForeground());
+//        SimpleDateFormat sd = new SimpleDateFormat("mm:ss");
+//        String res=sd.format(date);
+        long time=this.usageStats.getTotalTimeInForeground();
+        long hour = time/(60*60*1000);
+        long minute = (time - hour*60*60*1000)/(60*1000);
+        long second = (time - hour*60*60*1000 - minute*60*1000)/1000;
+        String res=new String();
+        res+=String.valueOf(hour)+":"+String.valueOf(minute)+":"+String.valueOf(second);
         if(res.equals("00:00"))return "还未使用过此APP";
         return "总使用时间："+res;
     }

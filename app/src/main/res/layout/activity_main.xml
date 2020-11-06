@@ -8,41 +8,39 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="17dp"
-        android:layout_marginTop="610dp"
-        android:layout_marginBottom="73dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:text="已安装APP名称"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="610dp"
-        android:layout_marginBottom="73dp"
-        android:text="电池使用统计"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/button2"
         app:layout_constraintEnd_toStartOf="@+id/button3"
-        app:layout_constraintStart_toEndOf="@+id/button"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="610dp"
-        android:layout_marginEnd="5dp"
-        android:layout_marginBottom="73dp"
-        android:text="使用时间统计"
+        android:id="@+id/button2"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginEnd="261dp"
+        android:layout_marginBottom="431dp"
+        android:text="电池使用统计"
+        android:background="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/button2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginEnd="111dp"
+        android:layout_marginBottom="581dp"
+        android:text="使用时间统计"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/button"
         app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

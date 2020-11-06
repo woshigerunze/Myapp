@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".collectlistview.CollectActivity">
+    tools:context=".UsageStatsCollect.CollectActivity">
 
     <ListView
         android:id="@+id/listView"
@@ -12,6 +12,20 @@
         android:layout_height="575dp"
         android:layout_marginTop="155dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ToggleButton
+        android:id="@+id/toggleButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="108dp"
+        android:layout_marginEnd="272dp"
+        android:text="ToggleButton"
+        android:textOff="过滤系统APP信息"
+        android:textOn="显示全部APP信息"
+        app:layout_constraintBottom_toTopOf="@+id/listView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

@@ -1,4 +1,4 @@
-package com.example.androidproject.collectlistview;
+package com.example.androidproject.UsageStatsCollect;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -10,7 +10,6 @@ import android.widget.TextView;
 
 import com.example.androidproject.R;
 
-import java.lang.reflect.Array;
 import java.util.List;
 
 public class CollectListViewAdapater extends ArrayAdapter {
