@@ -12,4 +12,13 @@
     <color name="light_blue_A200">#FF40C4FF</color>
     <color name="light_blue_A400">#FF00B0FF</color>
     <color name="black_overlay">#66000000</color>
+
+    <color name="colorPrimary">#172015</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="red">#FFE3293C</color>
+    <color name="blue">#FF1538D5</color>
+    <color name="tianlan">#FF1CE4DE</color>
+    <color name="gray">#bdc0bf</color>
+    <color name="c1">#ffffff</color>
 </resources>

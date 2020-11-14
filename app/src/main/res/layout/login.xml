@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="80dp"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    android:background="@drawable/backgroud"
+
+    >
+    <TextView
+        android:id="@+id/login1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="10dp"
+        android:layout_alignParentTop="true"
+        android:gravity="center"
+        android:text="@string/tip"
+        android:textColor="@color/c1"
+        android:textSize="30sp"
+        />
+
+
+    <EditText
+        android:id="@+id/et_username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/login1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:hint="@string/hint_username"
+        android:lines="1"
+        android:textColor="@color/c1"
+        android:theme="@style/editTextStyle"
+        android:textColorHint="@color/c1" />
+    <EditText
+        android:id="@+id/et_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:lines="1"
+        android:hint="@string/hint_password"
+        android:inputType="textPassword"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/et_username"
+        android:textColor="@color/c1"
+        android:theme="@style/editTextStyle"
+        android:textColorHint="@color/c1"/>
+    <LinearLayout
+        android:id="@+id/ly_1"
+        android:layout_below="@id/et_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <CheckBox
+            android:id="@+id/cb_rm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/et_password"
+            android:text="@string/jpassword"
+            android:textColor="@color/c1"
+            android:layout_gravity="left"
+            android:layout_weight="3"/>
+
+        <TextView
+            android:id="@+id/btn_register"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:gravity="center"
+            android:text="@string/zhuce"
+            android:textColor="@color/c1"
+            android:textSize="14sp"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_confirm"
+        android:layout_width="180dp"
+        android:layout_height="60dp"
+        android:layout_below="@id/ly_1"
+        android:layout_marginTop="35dp"
+        android:text="@string/login"
+        android:layout_centerHorizontal="true"
+        android:background="#A6000000"
+        android:textColor="@color/c1" />
+
+
+
+
+</RelativeLayout>

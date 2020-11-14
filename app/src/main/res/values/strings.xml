@@ -102,4 +102,12 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="button1">应用数据</string>
+    <string name="button2">我的信息</string>
+    <string name="hint_username">请输入用户名</string>
+    <string name="hint_password">请输入密码</string>
+    <string name="login">登录</string>
+    <string name="jpassword">记住账号</string>
+    <string name="zhuce">注册</string>
+    <string name="tip">欢迎登录</string>
 </resources>

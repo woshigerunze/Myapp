@@ -8,4 +8,20 @@
         <item name="android:background">@color/black_overlay</item>
         <item name="android:buttonBarStyle">?android:attr/buttonBarStyle</item>
     </style>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Base.Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+    <style name="editTextStyle">
+        <item name="colorControlActivated">#ffffff</item>
+        <item name="colorControlNormal">#ffffff</item>
+    </style>
+    <style name="tab_textview">
+        <item name="android:textSize">11sp</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:drawablePadding">2dip</item>
+    </style>
 </resources>

@@ -3,6 +3,9 @@ package com.example.androidproject.UsageStatsCollect;
 import android.app.usage.UsageStats;
 import android.graphics.drawable.Drawable;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class CollectStatics {
     private UsageStats      usageStats;
     private Drawable        icon;
@@ -26,10 +29,18 @@ public class CollectStatics {
         long second = (time - hour*60*60*1000 - minute*60*1000)/1000;
         String res=new String();
         res+=String.valueOf(hour)+":"+String.valueOf(minute)+":"+String.valueOf(second);
-        if(res.equals("00:00"))return "还未使用过此APP";
+        if(res.equals("0:0:0"))return "还未使用过此APP";
         return "总使用时间："+res;
     }
-    public Long getTimeStamp(){
+    public String getFirstTimeStamp(){
+        long time=this.usageStats.getFirstTimeStamp();
+        Date date = new Date(Long.valueOf(time));
+        SimpleDateFormat sd = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String res=sd.format(date);
+        return res;
+    }
+
+    public Long getTotalTimeInForeground(){
         return this.usageStats.getTotalTimeInForeground();
     }
     public String getAppname()

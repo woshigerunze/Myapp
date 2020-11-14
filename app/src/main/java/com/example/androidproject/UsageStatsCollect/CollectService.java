@@ -38,7 +38,7 @@ public class CollectService extends Service {
         Log.d("wocaonima","111");
             for (int i = 0; i < list.size(); i++) {
                 String packagename = list.get(i).getPackageName();
-                String timestamp = Long.toString(list.get(i).getLastTimeStamp());
+                String timestamp = Long.toString(list.get(i).getLastTimeUsed());
                 Cursor cursor = db.rawQuery("select timestamp from appuse where packagename=? and timestamp=?", new String[]{packagename, timestamp});
                 if (cursor.getCount() <= 0) {
                     ContentValues values = new ContentValues();
