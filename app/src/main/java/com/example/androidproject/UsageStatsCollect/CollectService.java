@@ -35,7 +35,6 @@ public class CollectService extends Service {
         PackageManager packageManager = getApplicationContext().getPackageManager();//获取所有已安装程序的包信息
         List<PackageInfo> packageInfos = packageManager.getInstalledPackages(0);
         db=db_helper.getWritableDatabase();
-        Log.d("wocaonima","111");
             for (int i = 0; i < list.size(); i++) {
                 String packagename = list.get(i).getPackageName();
                 String timestamp = Long.toString(list.get(i).getLastTimeUsed());
